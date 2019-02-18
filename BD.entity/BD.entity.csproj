@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C26AC701-8F6E-42F6-B73F-FC6943D1A17E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BD.entity</RootNamespace>
+    <AssemblyName>BD.entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin_factura_electronica.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccesoDatos.cs" />
+    <Compile Include="Cliente.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coches.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Factura.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacturacionDynamics.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturacionDynamics.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacturacionDynamics.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FacturacionDynamics.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturacionDynamics.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Factura_Electronica.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IniciarSesion_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCategoriasActivos_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCategoriasTodo_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCategorias_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCategorías_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaClientesRecientes_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaClientesTodos_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaClientes_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCliente_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCochesRecientes_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCochesTodos_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCochesUsuario_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaCoches_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFacturaElectronica_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFacturaE_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFacturasActivas_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFacturasElectronicasFechas_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFacturasHoy_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFacturasRecientes_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFacturas_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaMecanicos_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaOrdenesActivas_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaOrdenesHoy_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaOrdenesRecientes_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaOrdenesUsuarioMec_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaOrdenesUsuario_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaPerfil_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListarCoche.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaRegla_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaRevisionesActivas_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaRevisionesHoy_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaRevisionesPorIdCoche_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaRevisionesRecientes_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaRevisiones_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListarUsuarioPorId_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListarUsuario_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTipoCategoriasActivos_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTipoCategorias_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaTransPerfilRegla_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaUsuarioMecanico_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaUsuarioPorEstado_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaUsuarioReporteMec_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListaUsuario_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LoginUsuario_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mecanico.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObtenerCliente_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObtenerCoche_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObtenerFactura_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObtenerMecanico_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObtenerOrden_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObtenerPlacaCoche_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObtenerRevisionCompleta_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObtenerRevisión_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ObtenerUsuario_Result.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Orden.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="perfil.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="regla.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Revision.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tipoCategorias.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="transPerfilRegla.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="FacturacionDynamics.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FacturacionDynamics.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="FacturacionDynamics.edmx.diagram">
+      <DependentUpon>FacturacionDynamics.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FacturacionDynamics.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FacturacionDynamics.edmx</DependentUpon>
+      <LastGenOutput>FacturacionDynamics.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="FacturacionDynamics.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FacturacionDynamics.edmx</DependentUpon>
+      <LastGenOutput>FacturacionDynamics.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
