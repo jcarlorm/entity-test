@@ -17,5 +17,11 @@ namespace BD.entity
             return DatosFactura.ToList();
         }
         
+        public  List<ListarCoche> ObtieneListarCoches()
+        {
+            var DatosCoche = from datos in db.ListarCoche select datos;
+
+            return DatosCoche.ToList();
+        }
     }
 }
