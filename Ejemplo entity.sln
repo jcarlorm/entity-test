@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.proyecto", "UI.proyecto\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2E.uitest", "E2E.uitest\E2E.uitest.csproj", "{81362E88-ACF9-443C-B708-1E468B5802BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebUI.proyecto", "WebUI.proyecto\WebUI.proyecto.csproj", "{F1108420-7D5E-4307-B712-6311B07370DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{81362E88-ACF9-443C-B708-1E468B5802BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81362E88-ACF9-443C-B708-1E468B5802BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81362E88-ACF9-443C-B708-1E468B5802BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1108420-7D5E-4307-B712-6311B07370DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1108420-7D5E-4307-B712-6311B07370DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1108420-7D5E-4307-B712-6311B07370DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1108420-7D5E-4307-B712-6311B07370DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

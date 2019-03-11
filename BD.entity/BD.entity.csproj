@@ -52,6 +52,9 @@
     <Compile Include="admin_factura_electronica.cs">
       <DependentUpon>FacturacionDynamics.tt</DependentUpon>
     </Compile>
+    <Compile Include="Bitacora.cs">
+      <DependentUpon>FacturacionDynamics.tt</DependentUpon>
+    </Compile>
     <Compile Include="Categorias.cs">
       <DependentUpon>FacturacionDynamics.tt</DependentUpon>
     </Compile>

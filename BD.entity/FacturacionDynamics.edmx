@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DYNAMICSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DYNAMICSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="admin_factura_electronica">
           <Key>
             <PropertyRef Name="id" />
@@ -37,6 +37,14 @@
           <Property Name="Nota" Type="int" />
           <Property Name="Terminal" Type="varchar" MaxLength="10" />
           <Property Name="CorreoEnvio" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="Bitacora">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="evento" Type="varchar(max)" Nullable="false" />
+          <Property Name="metodo" Type="varchar" MaxLength="500" Nullable="false" />
         </EntityType>
         <EntityType Name="Categorias">
           <Key>
@@ -581,6 +589,7 @@ advertencia 6002: La tabla o vista 'DYNAMICS.dbo.ListarCoche' no tiene definida 
         </Function>
         <EntityContainer Name="DYNAMICSModelStoreContainer">
           <EntitySet Name="admin_factura_electronica" EntityType="Self.admin_factura_electronica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bitacora" EntityType="Self.Bitacora" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Coches" EntityType="Self.Coches" Schema="dbo" store:Type="Tables" />
@@ -611,8 +620,7 @@ advertencia 6002: La tabla o vista 'DYNAMICS.dbo.ListarCoche' no tiene definida 
     FROM [dbo].[ListarCoche] AS [ListarCoche]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DYNAMICSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1034,13 +1042,13 @@ advertencia 6002: La tabla o vista 'DYNAMICS.dbo.ListarCoche' no tiene definida 
             <Parameter Name="idUsuarioLogueado" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="EliminarCategorias">
-            <Parameter Name="idCategoria" Mode="In" Type="Int32" />
+          <Parameter Name="idCategoria" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="EliminarFactura">
-            <Parameter Name="idFactura" Mode="In" Type="Int32" />
+          <Parameter Name="idFactura" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="EliminarTipoCategorias">
-            <Parameter Name="idTipoCategoria" Mode="In" Type="Int32" />
+          <Parameter Name="idTipoCategoria" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="EliminarTransPerfilRegla">
             <Parameter Name="IdPerfil" Mode="In" Type="Int32" />
@@ -1048,7 +1056,7 @@ advertencia 6002: La tabla o vista 'DYNAMICS.dbo.ListarCoche' no tiene definida 
             <Parameter Name="idUsuarioLogueado" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="EliminarUsuario">
-            <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+          <Parameter Name="idUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="GuardaActualiza_FacturaE">
             <Parameter Name="id" Mode="In" Type="Int32" />
@@ -1097,11 +1105,11 @@ advertencia 6002: La tabla o vista 'DYNAMICS.dbo.ListarCoche' no tiene definida 
             <Parameter Name="Password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ListaCategorias" ReturnType="Collection(DYNAMICSModel.ListaCategorias_Result)">
-            <Parameter Name="tipoCategoria" Mode="In" Type="Int32" />
+          <Parameter Name="tipoCategoria" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ListaCategorías" ReturnType="Collection(DYNAMICSModel.ListaCategorías_Result)" />
           <FunctionImport Name="ListaCategoriasActivos" ReturnType="Collection(DYNAMICSModel.ListaCategoriasActivos_Result)">
-            <Parameter Name="tipoCategoria" Mode="In" Type="Int32" />
+          <Parameter Name="tipoCategoria" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ListaCategoriasTodo" ReturnType="Collection(DYNAMICSModel.ListaCategoriasTodo_Result)" />
           <FunctionImport Name="ListaCliente" ReturnType="Collection(DYNAMICSModel.ListaCliente_Result)" />
@@ -1114,7 +1122,7 @@ advertencia 6002: La tabla o vista 'DYNAMICS.dbo.ListarCoche' no tiene definida 
           <FunctionImport Name="ListaCochesUsuario" ReturnType="Collection(DYNAMICSModel.ListaCochesUsuario_Result)" />
           <FunctionImport Name="ListaFacturaE" ReturnType="Collection(DYNAMICSModel.ListaFacturaE_Result)" />
           <FunctionImport Name="ListaFacturaElectronica" ReturnType="Collection(DYNAMICSModel.ListaFacturaElectronica_Result)">
-            <Parameter Name="id" Mode="In" Type="Int32" />
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ListaFacturas" ReturnType="Collection(DYNAMICSModel.ListaFacturas_Result)" />
           <FunctionImport Name="ListaFacturasActivas" ReturnType="Collection(DYNAMICSModel.ListaFacturasActivas_Result)" />
@@ -1125,21 +1133,21 @@ advertencia 6002: La tabla o vista 'DYNAMICS.dbo.ListarCoche' no tiene definida 
           <FunctionImport Name="ListaFacturasHoy" ReturnType="Collection(DYNAMICSModel.ListaFacturasHoy_Result)" />
           <FunctionImport Name="ListaFacturasRecientes" ReturnType="Collection(DYNAMICSModel.ListaFacturasRecientes_Result)" />
           <FunctionImport Name="ListaIdPerfil" ReturnType="Collection(Int32)">
-            <Parameter Name="dato" Mode="In" Type="String" />
+          <Parameter Name="dato" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ListaMecanicos" ReturnType="Collection(DYNAMICSModel.ListaMecanicos_Result)" />
           <FunctionImport Name="ListaNumeroFactura" ReturnType="Collection(Int32)" />
           <FunctionImport Name="ListaOrdenEditar">
-            <Parameter Name="tipo" Mode="In" Type="String" />
+          <Parameter Name="tipo" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ListaOrdenesActivas" ReturnType="Collection(DYNAMICSModel.ListaOrdenesActivas_Result)" />
           <FunctionImport Name="ListaOrdenesHoy" ReturnType="Collection(DYNAMICSModel.ListaOrdenesHoy_Result)" />
           <FunctionImport Name="ListaOrdenesRecientes" ReturnType="Collection(DYNAMICSModel.ListaOrdenesRecientes_Result)" />
           <FunctionImport Name="ListaOrdenesUsuario" ReturnType="Collection(DYNAMICSModel.ListaOrdenesUsuario_Result)">
-            <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+          <Parameter Name="idUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ListaOrdenesUsuarioMec" ReturnType="Collection(DYNAMICSModel.ListaOrdenesUsuarioMec_Result)">
-            <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+          <Parameter Name="idUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ListaPerfil" ReturnType="Collection(DYNAMICSModel.ListaPerfil_Result)" />
           <FunctionImport Name="ListaRegla" ReturnType="Collection(DYNAMICSModel.ListaRegla_Result)" />
@@ -1160,46 +1168,47 @@ advertencia 6002: La tabla o vista 'DYNAMICS.dbo.ListarCoche' no tiene definida 
             <Parameter Name="estado2" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ListaUsuarioPorEstado" ReturnType="Collection(DYNAMICSModel.ListaUsuarioPorEstado_Result)">
-            <Parameter Name="estado" Mode="In" Type="Int32" />
+          <Parameter Name="estado" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ListaUsuarioReporteMec" ReturnType="Collection(DYNAMICSModel.ListaUsuarioReporteMec_Result)">
-            <Parameter Name="estado" Mode="In" Type="Int32" />
+          <Parameter Name="estado" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="LoginUsuario" ReturnType="Collection(DYNAMICSModel.LoginUsuario_Result)">
             <Parameter Name="nombre" Mode="In" Type="String" />
             <Parameter Name="contraseña" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ObtenerCliente" ReturnType="Collection(DYNAMICSModel.ObtenerCliente_Result)">
-            <Parameter Name="idCliente" Mode="In" Type="Int32" />
+          <Parameter Name="idCliente" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ObtenerCoche" ReturnType="Collection(DYNAMICSModel.ObtenerCoche_Result)">
-            <Parameter Name="idCoche" Mode="In" Type="Int32" />
+          <Parameter Name="idCoche" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ObtenerFactura" ReturnType="Collection(DYNAMICSModel.ObtenerFactura_Result)">
-            <Parameter Name="idFactura" Mode="In" Type="Int32" />
+          <Parameter Name="idFactura" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ObtenerIdUsuario">
             <Parameter Name="nombre" Mode="In" Type="String" />
             <Parameter Name="contraseña" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ObtenerMecanico" ReturnType="Collection(DYNAMICSModel.ObtenerMecanico_Result)">
-            <Parameter Name="idMecanico" Mode="In" Type="Int32" />
+          <Parameter Name="idMecanico" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ObtenerOrden" ReturnType="Collection(DYNAMICSModel.ObtenerOrden_Result)">
-            <Parameter Name="idOrden" Mode="In" Type="Int32" />
+          <Parameter Name="idOrden" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ObtenerPlacaCoche" ReturnType="Collection(DYNAMICSModel.ObtenerPlacaCoche_Result)">
-            <Parameter Name="placa" Mode="In" Type="String" />
+          <Parameter Name="placa" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="ObtenerRevisión" ReturnType="Collection(DYNAMICSModel.ObtenerRevisión_Result)">
-            <Parameter Name="idRevisión" Mode="In" Type="Int32" />
+          <Parameter Name="idRevisión" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ObtenerRevisionCompleta" ReturnType="Collection(DYNAMICSModel.ObtenerRevisionCompleta_Result)">
-            <Parameter Name="idRevision" Mode="In" Type="Int32" />
+          <Parameter Name="idRevision" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="ObtenerUsuario" ReturnType="Collection(DYNAMICSModel.ObtenerUsuario_Result)">
-            <Parameter Name="idUsuario" Mode="In" Type="Int32" />
+          <Parameter Name="idUsuario" Mode="In" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="Bitacora" EntityType="DYNAMICSModel.Bitacora" />
         </EntityContainer>
         <ComplexType Name="IniciarSesion_Result">
           <Property Type="Int32" Name="idUsuario" Nullable="false" />
@@ -1846,6 +1855,14 @@ advertencia 6002: La tabla o vista 'DYNAMICS.dbo.ListarCoche' no tiene definida 
           <Property Type="String" Name="contraseña" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="idPerfil" Nullable="true" />
         </ComplexType>
+        <EntityType Name="Bitacora">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="evento" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="metodo" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2967,6 +2984,15 @@ advertencia 6002: La tabla o vista 'DYNAMICS.dbo.ListarCoche' no tiene definida 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="Bitacora">
+            <EntityTypeMapping TypeName="DYNAMICSModel.Bitacora">
+              <MappingFragment StoreEntitySet="Bitacora">
+                <ScalarProperty Name="metodo" ColumnName="metodo" />
+                <ScalarProperty Name="evento" ColumnName="evento" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

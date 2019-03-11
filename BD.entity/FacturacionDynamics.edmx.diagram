@@ -20,6 +20,7 @@
         <EntityTypeShape EntityType="DYNAMICSModel.transPerfilRegla" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DYNAMICSModel.Usuarios" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DYNAMICSModel.ListarCoche" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DYNAMICSModel.Bitacora" Width="1.5" PointX="9.375" PointY="10.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

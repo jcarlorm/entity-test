@@ -16,6 +16,20 @@ namespace BD.entity
 
             return DatosFactura.ToList();
         }
+
+        public List<ListarCoche> ObtieneInformacionListarCoche()
+        {
+            var DatosCoche = from datos in db.ListarCoche select datos;
+
+            return DatosCoche.ToList();
+        }
+
+        public Bitacora RegistrarBitacora(Bitacora bitacora)
+        {
+            db.Bitacora.Add(bitacora);
+            db.SaveChanges();
+            return bitacora;
+        }
         
     }
 }
