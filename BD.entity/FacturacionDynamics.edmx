@@ -150,6 +150,18 @@
           <Property Name="estado" Type="int" Nullable="false" />
           <Property Name="descuento" Type="int" />
         </EntityType>
+        <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'DYNAMICS.dbo.PADRON_COMPLETO' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="PADRON_COMPLETO">
+          <Property Name="CEDULA" Type="varchar" MaxLength="50" />
+          <Property Name="OTRO" Type="varchar" MaxLength="50" />
+          <Property Name="G" Type="varchar" MaxLength="50" />
+          <Property Name="X" Type="varchar" MaxLength="50" />
+          <Property Name="Y" Type="varchar" MaxLength="50" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="50" />
+          <Property Name="APELLIDO1" Type="varchar" MaxLength="50" />
+          <Property Name="APELLIDO2" Type="varchar" MaxLength="50" />
+        </EntityType>-->
         <EntityType Name="perfil">
           <Key>
             <PropertyRef Name="IdPerfil" />

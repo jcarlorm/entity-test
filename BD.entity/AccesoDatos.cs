@@ -31,5 +31,11 @@ namespace BD.entity
             return bitacora;
         }
         
+        public  List<ListarCoche> ObtieneListarCoches()
+        {
+            var DatosCoche = from datos in db.ListarCoche select datos;
+
+            return DatosCoche.ToList();
+        }
     }
 }
