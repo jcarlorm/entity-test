@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[PADRON_COMPLETO] (
+    [CEDULA]    VARCHAR (50) NULL,
+    [OTRO]      VARCHAR (50) NULL,
+    [G]         VARCHAR (50) NULL,
+    [X]         VARCHAR (50) NULL,
+    [Y]         VARCHAR (50) NULL,
+    [NOMBRE]    VARCHAR (50) NULL,
+    [APELLIDO1] VARCHAR (50) NULL,
+    [APELLIDO2] VARCHAR (50) NULL
+);
+
