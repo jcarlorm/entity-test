@@ -61,6 +61,7 @@
     <Folder Include="Stored Procedures" />
     <Folder Include="Tables" />
     <Folder Include="Views" />
+    <Folder Include="Comparacion" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Functions\splitstring3.sql" />
@@ -167,5 +168,8 @@
     <Build Include="Tables\transPerfilRegla.sql" />
     <Build Include="Tables\Usuarios.sql" />
     <Build Include="Views\ListarCoche.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Comparacion\CompararEsquema.scmp" />
   </ItemGroup>
 </Project>
