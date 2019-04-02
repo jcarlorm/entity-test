@@ -3,12 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BD.entity;
 using System.Collections.Generic;
 using System.Xml;
-using System.Linq;
-using AutoMapper.Configuration;
-using AutoMapper.Execution;
-using AutoMapper.Internal;
-using AutoMapper.Mappers;
-using AutoMapper.QueryableExtensions;
 using AutoMapper;
 using BD.Pruebas.Empleado;
 using BD.Pruebas.EmpleadoView;
@@ -90,8 +84,47 @@ namespace BD.Pruebas
                 return Detalle; 
             }
         }
+        [TestMethod]
+        public void Mapeo()
+        {
+
+            Empleado.Empleado employee = new Empleado.Empleado
+            {
+                Name = "John SMith",
+                Email = "john@codearsenal.net",
+                Address = new Address
+                {
+                    Country = "USA",
+                    City = "New York",
+                    Street = "Wall Street",
+                    Number = 7
+                },
+                Position = "Manager",
+                Gender = true,
+                Age = 35,
+                YearsInCompany = 5,
+                StartDate = new DateTime(2007, 11, 2)
+            };
+
+            Mapper.Initialize(cfg => {
+                cfg.CreateMap<Empleado.Empleado, EmpleadoView.Empleado>()
+                    .ForMember(ev => ev.Address,
+                               m => m.MapFrom(a => a.Address.City + ", " +
+                                                   a.Address.Street + " " +
+                                                   a.Address.Number)
+                              )
+                   .ForMember(dest => dest.Gender,
+                               m => m.MapFrom<GenderResolver>())
+                   .ForMember(dest => dest.StartDate, m => m.MapFrom<DateFormatter>());
+            });
+
+            var model = Mapper.Map<EmpleadoView.Empleado>(employee);
         
+
+        }
     }
+
+   
 
     public class GenderResolver : IValueResolver<Empleado.Empleado, EmpleadoView.Empleado, string>
     {
