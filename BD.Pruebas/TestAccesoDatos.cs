@@ -4,6 +4,14 @@ using BD.entity;
 using System.Collections.Generic;
 using System.Xml;
 using System.Linq;
+using AutoMapper.Configuration;
+using AutoMapper.Execution;
+using AutoMapper.Internal;
+using AutoMapper.Mappers;
+using AutoMapper.QueryableExtensions;
+using AutoMapper;
+using BD.Pruebas.Empleado;
+using BD.Pruebas.EmpleadoView;
 
 namespace BD.Pruebas
 {
@@ -81,6 +89,23 @@ namespace BD.Pruebas
             {
                 return Detalle; 
             }
+        }
+        
+    }
+
+    public class GenderResolver : IValueResolver<Empleado.Empleado, EmpleadoView.Empleado, string>
+    {
+        public string Resolve(Empleado.Empleado source, EmpleadoView.Empleado destination, string destMember, ResolutionContext context)
+        {
+            return source.Gender ? "Man" : "Female";
+        }
+    }
+
+    public class DateFormatter : IValueResolver<Empleado.Empleado, EmpleadoView.Empleado , string>
+    {
+        public string Resolve(Empleado.Empleado source, EmpleadoView.Empleado destination, string destMember, ResolutionContext context)
+        {
+            return source.StartDate.ToShortDateString();
         }
     }
 }
