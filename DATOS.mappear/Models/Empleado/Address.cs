@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BD.Pruebas.Empleado
+namespace DATOS.mappear.Models.Empleado
 {
     public class Address
     {

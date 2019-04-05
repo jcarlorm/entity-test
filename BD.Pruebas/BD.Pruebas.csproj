@@ -61,9 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmpleadoView\Empleado.cs" />
-    <Compile Include="Empleado\Address.cs" />
-    <Compile Include="Empleado\Empleado.cs" />
     <Compile Include="TestAccesoDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

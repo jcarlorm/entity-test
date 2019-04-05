@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BD.Pruebas.EmpleadoView
+namespace DATOS.mappear.Models.EmpleadoView
 {
     public class Empleado
     {
