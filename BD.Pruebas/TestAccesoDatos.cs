@@ -87,6 +87,18 @@ namespace BD.Pruebas
         {
 
         }
+
+        [TestMethod]
+        public void PruebaActionValores()
+        {
+            string valor = "Hola mundo";
+
+            Func<string,string> cambiaValor = valorParam => {
+               return "Prueba Cambio";
+            };
+
+            valor = cambiaValor(valor);
+        }
     }
     
 }
