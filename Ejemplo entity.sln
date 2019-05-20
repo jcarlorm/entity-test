@@ -17,6 +17,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BD.sql", "BD.sql\BD.sql.sql
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATOS.mappear", "DATOS.mappear\DATOS.mappear.csproj", "{B3859834-E61B-4453-8635-2B542A5DD0BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Excel.Impresion", "Excel.Impresion\Excel.Impresion.csproj", "{7F9F157A-1EFB-490B-AD71-623E5A2FE1E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{B3859834-E61B-4453-8635-2B542A5DD0BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3859834-E61B-4453-8635-2B542A5DD0BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3859834-E61B-4453-8635-2B542A5DD0BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F9F157A-1EFB-490B-AD71-623E5A2FE1E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F9F157A-1EFB-490B-AD71-623E5A2FE1E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F9F157A-1EFB-490B-AD71-623E5A2FE1E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F9F157A-1EFB-490B-AD71-623E5A2FE1E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
