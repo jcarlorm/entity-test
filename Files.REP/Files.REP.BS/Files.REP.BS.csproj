@@ -7,8 +7,8 @@
     <ProjectGuid>{86231A6E-ABC9-4376-8352-B7C391644F2C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PELom.REP.BS</RootNamespace>
-    <AssemblyName>PELom.REP.BS</AssemblyName>
+    <RootNamespace>Files.REP.BS</RootNamespace>
+    <AssemblyName>Files.REP.BS</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

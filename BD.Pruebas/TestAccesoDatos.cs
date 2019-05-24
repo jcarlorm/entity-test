@@ -4,6 +4,7 @@ using BD.entity;
 using System.Collections.Generic;
 using System.Xml;
 using AutoMapper;
+using System.Linq;
 
 namespace BD.Pruebas
 {
@@ -98,6 +99,32 @@ namespace BD.Pruebas
             };
 
             valor = cambiaValor(valor);
+        }
+
+        [TestMethod]
+        public void TestMethod1()
+        {
+            List<int> numeros = new List<int>();
+            numeros.Add(1);
+            numeros.Add(2);
+            numeros.Add(3);
+            numeros.Add(4);
+            numeros.Add(5);
+            numeros.Add(6);
+            numeros.Add(7);
+            numeros.Add(8);
+            numeros.Add(9);
+
+            var lista = Split(numeros, 5);
+        }
+
+        public static List<List<int>> Split(List<int> source, int maxSubItems)
+        {
+            return source
+                .Select((x, i) => new { Index = i, Value = x })
+                .GroupBy(x => x.Index / maxSubItems)
+                .Select(x => x.Select(v => v.Value).ToList())
+                .ToList();
         }
     }
     
