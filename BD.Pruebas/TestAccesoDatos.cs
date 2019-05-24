@@ -1,5 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Excel = Microsoft.Office.Interop.Excel;
+using Impresion = Excel.Impresion;
 using BD.entity;
 using System.Collections.Generic;
 using System.Xml;
@@ -99,6 +101,28 @@ namespace BD.Pruebas
             };
 
             valor = cambiaValor(valor);
+        }
+
+
+        [TestMethod]
+        public void PruebaCrearExcelDinamico()
+        {
+            string ruta = @"C:\Users\PERSONAL\Desktop\Factura.xlsx";
+            string rutaDestino = @"C:\Users\PERSONAL\Desktop\Factura3.xlsx";
+
+            Impresion.Documento doc = new Impresion.Documento(ruta, rutaDestino);
+
+            Dictionary<string, string> campos = new Dictionary<string, string>();
+            campos.Add("B3", "PRUEBA CLIENTE");
+            campos.Add("B4", "PRUEBA CLIENTE");
+
+            Dictionary<string, List<string>> detalle = new Dictionary<string, List<string>>();
+            string lineaDetalle = "A6";
+
+            detalle.Add("1", new List<string>() { "1" , "Producto a" ,"1500" });
+            detalle.Add("2", new List<string>() { "3" , "Producto B" ,"5350" });
+
+            doc.Crear(campos, detalle, lineaDetalle);
         }
 
         [TestMethod]
