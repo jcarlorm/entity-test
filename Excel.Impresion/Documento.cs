@@ -46,18 +46,19 @@ namespace Excel.Impresion
 
             foreach (KeyValuePair<string, List<string>> item in detalle)
             {
+                celda = hoja.Cells[filaInicial + contadorFilas, columnaInicial.ToString()];
                 if (contadorFilas > 0) {
-                    celda = hoja.Cells[filaInicial + contadorFilas, columnaInicial.ToString()];
                     celda.Insert();
+                    celda = hoja.Cells[filaInicial + contadorFilas, columnaInicial.ToString()];
                 }
-                else celda = hoja.Cells[filaInicial, columnaInicial.ToString()];
 
                 Columna moverColumna = columnaInicial;
 
                 item.Value.ForEach(valor => {
+                    var fila = filaInicial + contadorFilas;
+                    celda = hoja.Cells[ fila , moverColumna.ToString()];
                     celda.Value = valor;
                     moverColumna++;
-                    celda = hoja.Cells[filaInicial, moverColumna.ToString()];
                 });
                 
                 contadorFilas++;
